@@ -1,0 +1,9 @@
+<FilesMatch "^(config\.php|LISTA\.md|README\.md|config\.example\.php|install\.php|cron\.php|cron-estado\.json|og-cache\.png|lib\.php|canais\.php|agenda\.php|alertachuva\.php|climaimagem\.php)$">
+  Require all denied
+</FilesMatch>
+DirectoryIndex index.php
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|js|json|css)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>

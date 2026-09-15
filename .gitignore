@@ -1,0 +1,17 @@
+# Segredos e dados — NUNCA sobem
+config.php
+uploads/
+og-cache.png
+cron-estado.json
+
+# Lixo
+*.bak*
+*.log
+*.tar.gz
+*.sql
+*.sql.gz
+node_modules/
+.DS_Store
+
+# Notas internas
+LISTA.md

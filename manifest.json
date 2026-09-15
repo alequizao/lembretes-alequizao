@@ -1,0 +1,12 @@
+{
+  "name": "Lembretes — Alequizão",
+  "short_name": "Lembretes",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["fullscreen", "standalone", "minimal-ui"],
+  "background_color": "#F3F4F6",
+  "theme_color": "#2563EB",
+  "lang": "pt-BR",
+  "icons": [{ "src": "icone.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
