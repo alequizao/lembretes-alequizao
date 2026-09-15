@@ -87,6 +87,23 @@ O `install.php` é idempotente (pode rodar de novo a cada atualização) e, na p
 cria o administrador com **senha sorteada, mostrada uma única vez no terminal**. Para escolher
 o login e a senha: `ADMIN_USUARIO=chefe ADMIN_SENHA=... php install.php`.
 
+### 🐳 Com Docker
+
+Imagem pronta no GitHub Packages (Apache + PHP 8.3 com PDO MySQL e GD já configurados):
+
+```bash
+docker run -d --name lembretes -p 8080:80 \
+  -v "$PWD/config.php:/var/www/html/config.php" \
+  -v lembretes-uploads:/var/www/html/uploads \
+  ghcr.io/alequizao/lembretes-alequizao:latest
+
+docker exec lembretes php install.php        # cria as tabelas e o administrador
+docker exec lembretes php cron.php           # ponha no cron do host, de minuto em minuto
+docker exec lembretes php alertachuva.php    # e este a cada 15 minutos
+```
+
+O `config.php` entra por volume — a imagem nunca carrega senha dentro.
+
 Crons sugeridos:
 
 ```cron
@@ -100,6 +117,8 @@ Requisitos: PHP 8.1+ (PDO, cURL, GD, mbstring), MySQL 5.7+ e, para o WhatsApp, u
 
 > ⚠️ Em servidores com **PHP-FPM** não use `php_flag` no `.htaccess` (derruba com HTTP 500) —
 > a pasta `uploads/` se protege com `<FilesMatch>` + `Options -ExecCGI`.
+
+Histórico de versões em [CHANGELOG.md](CHANGELOG.md).
 
 ## 👨‍💻 Desenvolvedor
 
