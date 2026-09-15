@@ -1,4 +1,8 @@
 <?php
+/*
+ * Lembretes · Desenvolvido por Alequizao <alequizao.dev@gmail.com>
+ * https://github.com/alequizao · © 2026 Alequizao. Todos os direitos reservados.
+ */
 /* Imagem 1200x630 da prévia de link (WhatsApp, Instagram, Telegram, Twitter). */
 require_once __DIR__ . '/lib.php';
 $cache = __DIR__ . '/og-cache.png';

@@ -1,4 +1,8 @@
 <?php
+/*
+ * Lembretes · Desenvolvido por Alequizao <alequizao.dev@gmail.com>
+ * https://github.com/alequizao · © 2026 Alequizao. Todos os direitos reservados.
+ */
 /* Anexos dos lembretes: upload, envio por WhatsApp/Direct/E-mail. */
 require_once __DIR__ . '/canais.php';
 

@@ -1,4 +1,8 @@
 <?php
+/*
+ * Lembretes · Desenvolvido por Alequizao <alequizao.dev@gmail.com>
+ * https://github.com/alequizao · © 2026 Alequizao. Todos os direitos reservados.
+ */
 /* API de previsão do tempo (Open-Meteo, sem chave de acesso).
    Uso: /lembretes/clima.php?cidade=Maceió[&dias=3]  →  JSON
    Também é usada internamente pelas variáveis {clima}, {temperatura}… dos lembretes. */

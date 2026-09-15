@@ -1,4 +1,8 @@
 <?php
+/*
+ * Lembretes · Desenvolvido por Alequizao <alequizao.dev@gmail.com>
+ * https://github.com/alequizao · © 2026 Alequizao. Todos os direitos reservados.
+ */
 /* Mostra o cartão da previsão em imagem (o mesmo que vai nos avisos).
    Uso: clima-cartao.php[?cidade=Maceió][&exemplo=1] */
 require_once __DIR__ . '/alertachuva.php';

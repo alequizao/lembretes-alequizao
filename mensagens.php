@@ -1,4 +1,8 @@
 <?php
+/*
+ * Lembretes · Desenvolvido por Alequizao <alequizao.dev@gmail.com>
+ * https://github.com/alequizao · © 2026 Alequizao. Todos os direitos reservados.
+ */
 /* Caixa de entrada unificada (WhatsApp + Direct do Instagram).
    Só o dono do painel enxerga isto — veja exigirDono() em lib.php. */
 require_once __DIR__ . '/midias.php';

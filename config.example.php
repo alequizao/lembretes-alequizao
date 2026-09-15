@@ -1,4 +1,8 @@
 <?php
+/*
+ * Lembretes · Desenvolvido por Alequizao <alequizao.dev@gmail.com>
+ * https://github.com/alequizao · © 2026 Alequizao. Todos os direitos reservados.
+ */
 /* Lembretes — configuração.
    Copie este arquivo para config.php e preencha com os dados do seu servidor.
    O config.php nunca vai para o git (está no .gitignore). */

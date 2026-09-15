@@ -1,4 +1,8 @@
 <?php
+/*
+ * Lembretes · Desenvolvido por Alequizao <alequizao.dev@gmail.com>
+ * https://github.com/alequizao · © 2026 Alequizao. Todos os direitos reservados.
+ */
 /* Entrega o arquivo de uma mensagem (foto, vídeo, áudio, documento) para a caixa de mensagens.
    Uso: midia.php?tipo=whatsapp&id=1&m=<id da mensagem>[&baixar=1] */
 require_once __DIR__ . '/mensagens.php';

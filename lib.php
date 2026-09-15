@@ -1,4 +1,8 @@
 <?php
+/*
+ * Lembretes · Desenvolvido por Alequizao <alequizao.dev@gmail.com>
+ * https://github.com/alequizao · © 2026 Alequizao. Todos os direitos reservados.
+ */
 require_once __DIR__ . '/config.php';
 date_default_timezone_set(APP_TZ);
 /* Warnings nunca podem vazar no meio do JSON da API. */

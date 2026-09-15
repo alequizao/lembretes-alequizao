@@ -1,4 +1,8 @@
 <?php
+/*
+ * Lembretes · Desenvolvido por Alequizao <alequizao.dev@gmail.com>
+ * https://github.com/alequizao · © 2026 Alequizao. Todos os direitos reservados.
+ */
 /* Alerta automático de chuva.
    Vigia a previsão hora a hora da cidade configurada (padrão: Maceió) e, quando a chuva
    estiver chegando, avisa sozinho todos os contatos ativos — sem precisar criar lembrete.

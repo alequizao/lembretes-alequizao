@@ -1,4 +1,8 @@
 <?php
+/*
+ * Lembretes · Desenvolvido por Alequizao <alequizao.dev@gmail.com>
+ * https://github.com/alequizao · © 2026 Alequizao. Todos os direitos reservados.
+ */
 /* Cartão de previsão do tempo em imagem (GD) — mesmo visual da tela #/clima.
    Uso: climaImagemGerar($analise) → ['arquivo'=>'clima-....png', 'caminho'=>..., 'url'=>...]  */
 require_once __DIR__ . '/midias.php';

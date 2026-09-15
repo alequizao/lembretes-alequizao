@@ -1,4 +1,8 @@
 <?php
+/*
+ * Lembretes · Desenvolvido por Alequizao <alequizao.dev@gmail.com>
+ * https://github.com/alequizao · © 2026 Alequizao. Todos os direitos reservados.
+ */
 /* Roda a cada minuto pelo cron: dispara os lembretes vencidos. */
 if (PHP_SAPI !== 'cli') { http_response_code(403); exit('Somente CLI'); }
 require_once __DIR__ . '/agenda.php';

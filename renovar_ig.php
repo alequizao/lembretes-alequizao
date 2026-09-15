@@ -1,4 +1,8 @@
 <?php
+/*
+ * Lembretes · Desenvolvido por Alequizao <alequizao.dev@gmail.com>
+ * https://github.com/alequizao · © 2026 Alequizao. Todos os direitos reservados.
+ */
 /* Renova os tokens de longa duração do Instagram antes que expirem.
    Rodar pelo cron todo dia: /www/server/php/83/bin/php renovar_ig.php [--forcar] */
 if (PHP_SAPI !== 'cli') { http_response_code(403); exit('Somente CLI'); }

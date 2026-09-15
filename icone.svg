@@ -1,1 +1,5 @@
+<!--
+  Lembretes · Desenvolvido por Alequizao <alequizao.dev@gmail.com>
+  https://github.com/alequizao · © 2026 Alequizao. Todos os direitos reservados.
+-->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#2563EB"/><path d="M256 96c-53 0-96 43-96 96v66l-28 47c-5 9 1 21 12 21h224c11 0 17-12 12-21l-28-47v-66c0-53-43-96-96-96z" fill="#fff"/><circle cx="256" cy="86" r="22" fill="#fff"/><path d="M216 350a40 40 0 0 0 80 0z" fill="#fff"/></svg>

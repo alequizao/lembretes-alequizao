@@ -1,4 +1,8 @@
 <?php
+/*
+ * Lembretes · Desenvolvido por Alequizao <alequizao.dev@gmail.com>
+ * https://github.com/alequizao · © 2026 Alequizao. Todos os direitos reservados.
+ */
 require_once __DIR__ . '/agenda.php';
 require_once __DIR__ . '/midias.php';
 header('Content-Type: application/json; charset=utf-8');
