@@ -79,9 +79,13 @@ e avisa sozinho quando a chuva está chegando:
 ## 🚀 Instalação
 
 ```bash
-cp config.example.php config.php     # preencha banco, Evolution API e SMTP
-php install.php                      # cria as tabelas e o usuário master
+cp config.example.php config.php     # preencha banco, endereço, Evolution API e SMTP
+php install.php                      # cria as tabelas e o administrador
 ```
+
+O `install.php` é idempotente (pode rodar de novo a cada atualização) e, na primeira vez,
+cria o administrador com **senha sorteada, mostrada uma única vez no terminal**. Para escolher
+o login e a senha: `ADMIN_USUARIO=chefe ADMIN_SENHA=... php install.php`.
 
 Crons sugeridos:
 
@@ -108,5 +112,6 @@ Quer um sistema como este para o seu negócio? Entre em contato.
 
 ---
 
-© Alequizão · Código proprietário, desenvolvido sob encomenda.
-Uso, cópia ou redistribuição somente com autorização.
+© Alequizão · Todos os direitos reservados.
+O código está público para consulta e portfólio; uso comercial, cópia ou
+redistribuição somente com autorização.

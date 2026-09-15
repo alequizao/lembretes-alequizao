@@ -119,15 +119,17 @@ CREATE TABLE IF NOT EXISTS log (
 SQL;
 foreach (array_filter(array_map('trim', explode(";\n", $sql))) as $q) { if ($q !== '') $db->exec($q); }
 
-/* usuários master */
-foreach ([['alequizao', 'Alequizão'], ['jeovana', 'Jeovana']] as [$login, $nome]) {
-    $st = $db->prepare('SELECT id FROM usuarios WHERE usuario = ?');
-    $st->execute([$login]);
-    if (!$st->fetch()) {
-        $db->prepare('INSERT INTO usuarios (usuario, nome, senha, admin) VALUES (?,?,?,1)')
-           ->execute([$login, $nome, password_hash($login, PASSWORD_DEFAULT)]);
-        echo "usuário master criado: $login/$login\n";
-    }
+/* Primeiro usuário administrador.
+   Só é criado quando ainda não existe NENHUM usuário, e com senha sorteada, mostrada
+   uma única vez aqui no terminal — nada de senha previsível em código público.
+   Dá para escolher o login/senha: ADMIN_USUARIO=chefe ADMIN_SENHA=... php install.php */
+if (!(int)$db->query('SELECT COUNT(*) FROM usuarios')->fetchColumn()) {
+    $login = getenv('ADMIN_USUARIO') ?: 'admin';
+    $senha = getenv('ADMIN_SENHA') ?: substr(bin2hex(random_bytes(8)), 0, 12);
+    $db->prepare('INSERT INTO usuarios (usuario, nome, senha, admin) VALUES (?,?,?,1)')
+       ->execute([$login, 'Administrador', password_hash($senha, PASSWORD_DEFAULT)]);
+    echo "administrador criado — usuário: $login | senha: $senha\n";
+    echo "anote a senha agora; ela não será mostrada de novo (troque depois em Conexões → Minha conta)\n";
 }
 /* padrões de configuração */
 $padroes = [

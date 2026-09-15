@@ -4,7 +4,15 @@
 require_once __DIR__ . '/midias.php';
 
 define('CLIMA_IMG_DIR', MIDIA_DIR . '/clima');
-define('CLIMA_IMG_URL', 'https://alequizao.com/lembretes/uploads/clima/');
+
+/* Endereço público da pasta dos cartões. Em CLI não existe HTTP_HOST, então vale
+   a constante APP_URL do config.php (se houver) e, por último, o host da requisição. */
+function climaImagemBase(): string {
+    if (defined('APP_URL') && APP_URL) return rtrim(APP_URL, '/') . '/uploads/clima/';
+    $host = $_SERVER['HTTP_HOST'] ?? '';
+    if ($host !== '') return 'https://' . $host . '/lembretes/uploads/clima/';
+    return rtrim(str_replace('/uploads/', '/', midiaUrlBase()), '/') . '/uploads/clima/';
+}
 
 /* ---------- ajudantes de desenho ---------- */
 function ciCor($im, string $hex, float $alfa = 0): int {
@@ -129,7 +137,7 @@ function climaImagemGerar(array $a, bool $cache = true): array {
     $arquivo = 'clima-' . substr($chave, 0, 12) . '.jpg';
     $caminho = CLIMA_IMG_DIR . '/' . $arquivo;
     if ($cache && is_file($caminho) && filemtime($caminho) > time() - 1800) {
-        return ['ok' => true, 'arquivo' => $arquivo, 'caminho' => $caminho, 'url' => CLIMA_IMG_URL . $arquivo, 'cache' => true];
+        return ['ok' => true, 'arquivo' => $arquivo, 'caminho' => $caminho, 'url' => climaImagemBase() . $arquivo, 'cache' => true];
     }
 
     $L = 1080; $A = 1350; $m = 72;
@@ -217,7 +225,7 @@ function climaImagemGerar(array $a, bool $cache = true): array {
     imagejpeg($im, $caminho, 88);
     imagedestroy($im);
     @chmod($caminho, 0644);
-    return ['ok' => true, 'arquivo' => $arquivo, 'caminho' => $caminho, 'url' => CLIMA_IMG_URL . $arquivo,
+    return ['ok' => true, 'arquivo' => $arquivo, 'caminho' => $caminho, 'url' => climaImagemBase() . $arquivo,
             'tamanho' => (int)@filesize($caminho)];
 }
 
